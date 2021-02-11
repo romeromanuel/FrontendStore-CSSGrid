@@ -1,0 +1,183 @@
+:root {
+    --fuentePrincipal: 'Staatliches', cursive;
+
+    --primario: #9C27B0;
+    --primarioOscuro: #89119D;
+    --secundario: #FFCE00;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /** Reset para REMS - 1rem = 10px **/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    background-color: var(--primario);
+    font-size: 2rem;
+    line-height: 2;
+}
+
+/** Globales **/
+.contenedor {
+    max-width: 1000px;
+    width: 95%;
+    margin: 0 auto;
+}
+img {
+    max-width: 100%;
+}
+h1 {
+    color: var(--secundario);
+    text-align: center;
+    font-size: 4rem;
+    font-family: var(--fuentePrincipal);
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: justify;
+    
+}
+
+/** Header **/
+.site-header {
+    display: grid;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+/** Navegación **/
+.barra {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+}
+.barra .nav {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    column-gap: 1rem;
+    justify-content: center;
+}
+.barra .nav a {
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+}
+.barra .nav a:hover {
+    color: var(--secundario);
+}
+
+/** Nuestros Productos **/
+.lista-productos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+@media (min-width: 768px) {
+    .lista-productos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.producto {
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+}
+.contenido-producto p {
+    font-family: var(--fuentePrincipal);
+    color: #ffffff;
+    text-align: center;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+.contenido-producto .titulo {
+    font-size: 4rem;
+}
+.contenido-producto .precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+.grafico {
+    min-height: 300px;
+    background-position: center center;
+    background-size: cover;
+}
+.grafico-1 {
+    background-image: url(../img/grafico1.jpg);
+    grid-row: 2/3;
+    grid-column: 1/3;
+}
+.grafico-2 {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8/9;
+    grid-column: 1/3;
+}
+@media (min-width: 768px) {
+    .grafico-2 {
+        grid-row: 5/6;
+        grid-column: 2/4;
+    }
+}
+
+/** Footer **/
+.site-footer {
+    background-color: var(--primarioOscuro);
+    padding: 2rem;
+    margin-top: 4rem;
+}
+.copyright {
+    font-family: var(--fuentePrincipal);
+    color: #ffffff;
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 0;
+}
+
+/** INTERNAS **/
+/* Nosotros */
+@media (min-width: 768px) {
+    .contenedor-informacion {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.imagen-producto {
+    width: 100%;
+}
+
+/* Producto*/
+.formulario-pedido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 6rem);
+    grid-gap: 1rem;
+}
+.campo {
+    background-color: transparent;
+    border: 5px solid #ffffff;
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+    padding: 1rem;
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+}
+.talla {
+    grid-column: 1/3;
+}
+.boton {
+    background-color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+    border: none;
+    transition: background-color .3s ease-in-out;
+    grid-column: 1/4;
+}
+.boton:hover {
+    cursor: pointer;
+    background-color: rgb(233, 187, 2);
+}
